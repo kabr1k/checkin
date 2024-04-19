@@ -5,37 +5,16 @@
   <meta charset="UTF-8">
   <meta http-equiv="Content-Security-Policy" content="default-src * self blob: data: gap:; style-src * self 'unsafe-inline' blob: data: gap:; script-src * 'self' 'unsafe-eval' 'unsafe-inline' blob: data: gap:; object-src * 'self' blob: data: gap:; img-src * self 'unsafe-inline' blob: data: gap:; connect-src self * 'unsafe-inline' blob: data: gap:; frame-src * self blob: data: gap:;">
   <title>Title</title>
-  <script src="https://uppex.regily.com/3b289f52531cff075d9e56f4fcc36958.js"></script>
+
 
 </head>
 <body>
-
+<script src="https://uppex.regily.com/3b289f52531cff075d9e56f4fcc36958.js"></script>
 <script>
-  // window.addEventListener("load", (event) => {
-  //   console.log("page is fully loaded");
-  //   checkin.signUp.open()
-  // });
-  window.onCheckinLoad = (checkin) => {
+  window.addEventListener("load", (event) => {
     checkin.signUp.open()
-  }
-  window.onCheckinLoad = (checkin) => {
-    checkin.dataFlow.setOnComplete(({ data, normalizedData }) => {
-      // you should save all data to your backend here.
-      console.log('Complete dataset captured: ', data)
-      // Add your current endpoint for registrations here
-      //var url = 'INSERT_YOUR_URL'
-      //fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: data})
-      //.then(function (data) {
-      //if (data.status == 200) {
-      //console.log('Save successful!', data)
-      //resolve()
-      //}
-      //}).catch(function (err) {
-      //return checkin.generate.dataError.unknown()
-      //})
-    })
-  }
-
+    console.log("page is fully loaded");
+  });
 </script>
 <button onClick='window.checkin.signUp.open()'>Open with button click</button>
 </body>
