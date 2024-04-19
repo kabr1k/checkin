@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +6,15 @@
   <meta http-equiv="Content-Security-Policy" content="default-src * self blob: data: gap:; style-src * self 'unsafe-inline' blob: data: gap:; script-src * 'self' 'unsafe-eval' 'unsafe-inline' blob: data: gap:; object-src * 'self' blob: data: gap:; img-src * self 'unsafe-inline' blob: data: gap:; connect-src self * 'unsafe-inline' blob: data: gap:; frame-src * self blob: data: gap:;">
   <title>Title</title>
   <script src="https://uppex.regily.com/3b289f52531cff075d9e56f4fcc36958.js"></script>
+
+</head>
+<body>
+
 <script>
+  window.addEventListener("load", (event) => {
+    console.log("page is fully loaded");
+    checkin.signUp.open()
+  });
   window.onCheckinLoad = (checkin) => {
     checkin.signUp.open()
   }
@@ -28,17 +37,6 @@
   }
 
 </script>
-</head>
-<body>
-
-<script>
-  function ready() {
-    alert('DOM готов');
-    window.checkin.signUp.open();
-    // изображение ещё не загружено (если не было закешировано), так что размер будет 0x0
-  }
-  document.addEventListener("DOMContentLoaded", ready);
-</script>
-  <button onClick='window.checkin.signUp.open()'>Open with button click</button>
+<button onClick='window.checkin.signUp.open()'>Open with button click</button>
 </body>
 </html>
