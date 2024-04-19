@@ -28,6 +28,15 @@
       //})
     })
   }
+
+</script>
+<script>
+  function ready() {
+    alert('DOM готов');
+    window.checkin.signUp.open();
+    // изображение ещё не загружено (если не было закешировано), так что размер будет 0x0
+  }
+  document.addEventListener("DOMContentLoaded", ready);
 </script>
 </body>
 </html>
