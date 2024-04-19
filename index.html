@@ -8,14 +8,12 @@
   <script src="https://uppex.regily.com/3b289f52531cff075d9e56f4fcc36958.js" defer></script>
 </head>
 <body>
-
+<button id="but" onClick='window.checkin.signUp.open()'>Open with button click</button>
 <script>
-  // window.checkin.signUp.open()
-  window.checkin.signUp.open()
   window.addEventListener("load", (event) => {
+    document.getElementById('but').click();
     console.log("page is fully loaded");
   });
 </script>
-<button onClick='window.checkin.signUp.open()'>Open with button click</button>
 </body>
 </html>
