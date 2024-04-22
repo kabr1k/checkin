@@ -10,7 +10,8 @@
 <script>
   window.onCheckinLoad = (checkin) => {
     const urlParams = new URLSearchParams(window.location.search);
-    const entries = URLSearchParams(window.location.search).entries();
+    const entries = new URLSearchParams(window.location.search).entries();
+    console.log(urlParams);
     console.log(entries);
     const fampyUserId = urlParams.get('fampyUserId');
     if (fampyUserId) {
