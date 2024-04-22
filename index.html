@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,8 +11,23 @@
 <script>
   window.addEventListener("load", (event) => {
     document.getElementById('but').click();
-    console.log("page is fully loaded");
   });
+  window.onCheckinLoad = (checkin) => {
+    console.log('Test fampy kyc onCheckinLoad FIRED!!!!!!!!!!');
+    checkin.dataFlow.setOnComplete(({ data, normalizedData }) => {
+      console.log('Test fampy kyc setOnComplete FIRED!!!!!!!!!!');
+      console.log('Complete dataset captured: ', data)
+      var url = 'https://mobile-fampy.yamsoft.tech/api/kyc/complete'
+      fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json', 'AppId': 'c6d885df-b5b9-4995-ac83-0d3eb5d75cfd' }, body: data})
+      .then((data) => {
+      if (data.status == 200) {
+        console.log('Save successful!', data)
+      }
+      }).catch(function (err) {
+        return checkin.generate.dataError.unknown()
+      })
+    })
+  }
 </script>
 </body>
 </html>
