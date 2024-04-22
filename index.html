@@ -10,6 +10,8 @@
 <script>
   window.onCheckinLoad = (checkin) => {
     const urlParams = new URLSearchParams(window.location.search);
+    const entries = URLSearchParams.entries();
+    console.log(entries);
     const fampyUserId = urlParams.get('fampyUserId');
     if (fampyUserId) {
       checkin.settings.setCustomData({ fampyUserId });
