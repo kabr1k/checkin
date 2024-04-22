@@ -24,6 +24,7 @@
       .then((data) => {
       if (data.status == 200) {
         console.log('Save successful!', data)
+        window.location.href = "https://mobile-fampy.yamsoft.tech";
       }
       }).catch(function (err) {
         return checkin.generate.dataError.unknown()
