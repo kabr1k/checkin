@@ -16,7 +16,7 @@
       console.log('User id provided', fampyUserId);
     }
     checkin.signUp.open()
-    checkin.dataFlow.setOnComplete(({ data, normalizedData }) => {
+    checkin.dataFlow.setOnComplete((data) => {
       console.log('Test fampy kyc setOnComplete FIRED!!!!!!!!!!');
       console.log('Complete dataset captured: ', data)
       var url = 'https://mobile-fampy.yamsoft.tech/api/users/kyc/complete'
