@@ -9,6 +9,7 @@
 <body>
 <script>
   window.onCheckinLoad = (checkin) => {
+    checkin.settings.setCustomData({fampyId: fampyUserId})
     checkin.signUp.open()
     checkin.dataFlow.setOnComplete(({ data, normalizedData }) => {
       console.log('Test fampy kyc setOnComplete FIRED!!!!!!!!!!');
