@@ -7,17 +7,18 @@
   <script src="https://uppex.regily.com/3b289f52531cff075d9e56f4fcc36958.js" defer></script>
 </head>
 <body>
-<button id="but" onClick='window.checkin.signUp.open()'>Open with button click</button>
+<!--<button id="but" onClick='window.checkin.signUp.open()'>Open with button click</button>-->
 <script>
   window.addEventListener("load", (event) => {
-    document.getElementById('but').click();
+    // document.getElementById('but').click();
   });
   window.onCheckinLoad = (checkin) => {
     console.log('Test fampy kyc onCheckinLoad FIRED!!!!!!!!!!');
+    checkin.signUp.open()
     checkin.dataFlow.setOnComplete(({ data, normalizedData }) => {
       console.log('Test fampy kyc setOnComplete FIRED!!!!!!!!!!');
       console.log('Complete dataset captured: ', data)
-      var url = 'https://mobile-fampy.yamsoft.tech/api/kyc/complete'
+      var url = 'https://mobile-fampy.yamsoft.tech/api/users/kyc/complete'
       fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json', 'AppId': 'c6d885df-b5b9-4995-ac83-0d3eb5d75cfd' }, body: data})
       .then((data) => {
       if (data.status == 200) {
