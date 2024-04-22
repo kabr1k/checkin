@@ -13,6 +13,7 @@
     const fampyUserId = urlParams.get('fampyUserId');
     if (fampyUserId) {
       checkin.settings.setCustomData({ fampyUserId });
+      console.log('User id provided', fampyUserId);
     }
     checkin.signUp.open()
     checkin.dataFlow.setOnComplete(({ data, normalizedData }) => {
