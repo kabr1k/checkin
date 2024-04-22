@@ -7,13 +7,8 @@
   <script src="https://uppex.regily.com/3b289f52531cff075d9e56f4fcc36958.js" defer></script>
 </head>
 <body>
-<!--<button id="but" onClick='window.checkin.signUp.open()'>Open with button click</button>-->
 <script>
-  window.addEventListener("load", (event) => {
-    // document.getElementById('but').click();
-  });
   window.onCheckinLoad = (checkin) => {
-    console.log('Test fampy kyc onCheckinLoad FIRED!!!!!!!!!!');
     checkin.signUp.open()
     checkin.dataFlow.setOnComplete(({ data, normalizedData }) => {
       console.log('Test fampy kyc setOnComplete FIRED!!!!!!!!!!');
