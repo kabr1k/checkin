@@ -10,14 +10,14 @@
 <script>
   window.onCheckinLoad = (checkin) => {
     const urlParams = new URLSearchParams(window.location.search);
-    const entries = URLSearchParams.entries();
+    const entries = URLSearchParams(window.location.search).entries();
     console.log(entries);
     const fampyUserId = urlParams.get('fampyUserId');
     if (fampyUserId) {
       checkin.settings.setCustomData({ fampyUserId });
       console.log('User id provided', fampyUserId);
     }
-    checkin.signUp.open()
+    // checkin.signUp.open()
     checkin.dataFlow.setOnComplete(({ data, normalizedData }) => {
       console.log('Test fampy kyc setOnComplete FIRED!!!!!!!!!!');
       console.log('Complete dataset captured: ', data)
