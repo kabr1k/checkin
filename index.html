@@ -11,7 +11,7 @@
   window.onCheckinLoad = (checkin) => {
     const urlParams = new URLSearchParams(window.location.search);
     const redirectUrl = window.location.hostname + '/kyc-complete';
-    window.location.replace(redirectUrl);
+    window.location.replace('/kyc-complete');
     const fampyUserId = urlParams.get('fampyUserId');
     if (fampyUserId) {
       checkin.settings.setCustomData({ fampyUserId });
