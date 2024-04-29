@@ -20,12 +20,10 @@
       console.log('Test fampy kyc setOnComplete FIRED!!!!!!!!!!');
       console.log('Complete dataset captured: ', data)
       var url = 'https://mobile-fampy.yamsoft.tech/api/users/kyc/complete'
-      fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json', 'AppId': 'c6d885df-b5b9-4995-ac83-0d3eb5d75cfd' }, body: data})
+      fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json', 'AppId': 'c6d885df-b5b9-4995-ac83-0d3eb5d75cfd' }, body: data.data})
       .then((data) => {
-      if (data.status == 200) {
-        console.log('Save successful!', data)
+        console.log('Save result!', data)
         window.location.replace('/kyc-complete');
-      }
       }).catch(function (err) {
         return checkin.generate.dataError.unknown()
       })
