@@ -13,10 +13,11 @@
     const fampyUserId = urlParams.get('fampyUserId');
     if (fampyUserId) {
       console.log('User id provided', fampyUserId);
+      const fampyUserIdNumber = +fampyUserId;
       checkin.signUp.open()
       checkin.dataFlow.setOnComplete((data) => {
         console.log('Test fampy kyc setOnComplete FIRED!!!!!!!!!!');
-        console.log('Payload to send: ', { fampyUserId, ...data.data })
+        console.log('Payload to send: ', { fampyUserId: fampyUserIdNumber, ...data.data })
         var url = 'https://mobile-fampy.yamsoft.tech/api/users/kyc/complete'
         fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json', 'AppId': 'c6d885df-b5b9-4995-ac83-0d3eb5d75cfd' }, body: { fampyUserId, ...data.data }})
         .then((data) => {
