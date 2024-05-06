@@ -9,7 +9,10 @@
 <body>
 <script>
   var url = 'https://mobile-fampy.yamsoft.tech/api/users/kyc/complete'
-  fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json', 'AppId': 'c6d885df-b5b9-4995-ac83-0d3eb5d75cfd' }, body: { fampyUserId, payload: 'test' }})
+  const urlParams = new URLSearchParams(window.location.search);
+  const fampyUserId = urlParams.get('fampyUserId');
+  const fampyUserIdNumber = +fampyUserId;
+  fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json', 'AppId': 'c6d885df-b5b9-4995-ac83-0d3eb5d75cfd' }, body: { fampyUserId: fampyUserIdNumber, payload: 'test' }})
     .then((data) => {
       console.log('Save result!', data)
       // window.location.replace('/kyc-complete');
@@ -27,7 +30,7 @@
         console.log('Test fampy kyc setOnComplete FIRED!!!!!!!!!!');
         console.log('Payload to send: ', { fampyUserId: fampyUserIdNumber, ...data.data })
         var url = 'https://mobile-fampy.yamsoft.tech/api/users/kyc/complete'
-        fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json', 'AppId': 'c6d885df-b5b9-4995-ac83-0d3eb5d75cfd' }, body: { fampyUserId, ...data.data }})
+        fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json', 'AppId': 'c6d885df-b5b9-4995-ac83-0d3eb5d75cfd' }, body: { fampyUserId: fampyUserIdNumber, ...data.data }})
         .then((data) => {
           console.log('Save result!', data)
           // window.location.replace('/kyc-complete');
